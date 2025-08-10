@@ -1,0 +1,61 @@
+#VRML_SIM R2023b utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0
+# This is a proto file for Webots for the sparkiebot
+# Extracted from: /tmp/tmpznfew38z.urdf
+
+PROTO sparkiebot [
+  field  SFVec3f     translation     0 0 0
+  field  SFRotation  rotation        0 0 1 0
+  field  SFString    name            "sparkiebot"  # Is `Robot.name`.
+  field  SFString    controller      "void"        # Is `Robot.controller`.
+  field  MFString    controllerArgs  []            # Is `Robot.controllerArgs`.
+  field  SFString    customData      ""            # Is `Robot.customData`.
+  field  SFBool      supervisor      FALSE         # Is `Robot.supervisor`.
+  field  SFBool      synchronization TRUE          # Is `Robot.synchronization`.
+  field  SFBool      selfCollision   FALSE         # Is `Robot.selfCollision`.
+]
+{
+  Robot {
+    translation IS translation
+    rotation IS rotation
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    supervisor IS supervisor
+    synchronization IS synchronization
+    selfCollision IS selfCollision
+    children [
+      Transform {
+        translation 0.000000 0.000000 -0.150000
+        scale 0.001000 0.001000 0.001000
+        children [
+          Shape {
+            appearance DEF White PBRAppearance {
+              baseColor 0.910000 0.900000 0.900000
+              roughness 1.000000
+              metalness 0
+            }
+            geometry DEF main_body Mesh {
+              url "/Users/mattia/Documents/sparkie/sparkie_ws/src/sparkie_base/sparkie_description/meshes/main_body.obj"
+            }
+          }
+        ]
+      }
+    ]
+    name IS name
+    boundingObject Cylinder {
+      radius 0.15
+      height 0.3
+    }
+    physics Physics {
+      density -1
+      mass 5.000000
+      centerOfMass [ 0.000000 0.000000 0.000000 ]
+      inertiaMatrix [
+        4.000000e-03 6.000000e-03 7.000000e-03
+        1.000000e-03 0.000000e+00 0.000000e+00
+      ]
+    }
+  }
+}

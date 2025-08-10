@@ -1,0 +1,19 @@
+{
+    "cmake.ignoreCMakeListsMissing": true,
+    "ros.distro": "jazzy",
+    "ros.rosSetupScript": "/opt/vulcanexus/jazzy/setup.bash",
+    "python.autoComplete.extraPaths": [
+        "/home/parallels/Desktop/parallels/sparkie_ws/install/sparkie_sim/lib/python3.10/site-packages",
+        "/home/parallels/Desktop/parallels/sparkie_ws/install/sparkie_description/lib/python3.10/site-packages",
+        "/home/parallels/Desktop/parallels/sparkie_ws/install/sparkie_board_connect/lib/python3.12/site-packages",
+        "/opt/vulcanexus/jazzy/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/parallels/Desktop/parallels/sparkie_ws/install/sparkie_sim/lib/python3.10/site-packages",
+        "/home/parallels/Desktop/parallels/sparkie_ws/install/sparkie_description/lib/python3.10/site-packages",
+        "/home/parallels/Desktop/parallels/sparkie_ws/install/sparkie_board_connect/lib/python3.12/site-packages",
+        "/opt/vulcanexus/jazzy/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ]
+}

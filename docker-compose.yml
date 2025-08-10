@@ -1,0 +1,52 @@
+version: '3'
+services:
+        micro_ros_agent:
+                image: microros/micro-ros-agent:humble
+                network_mode: host
+                restart: always
+                environment:
+                        - ROS_DOMAIN_ID=0
+                devices:
+                        - /dev/ttyTHS0:/dev/ttyTSH0
+                privileged: true
+                command: serial --dev /dev/ttyTSH0 -b 921600
+        localization:
+                image: sparkie/perception
+                network_mode: host
+                stdin_open: true # docker run -i
+                tty: true        # docker run -t
+                #restart: always
+                volumes:
+                        - ./sparkie_perception:/sparkie_perception:z
+                        - /dev:/dev
+                device_cgroup_rules:
+                        - 'c 81:* rmw'
+                        - 'c 189:* rmw'
+                privileged: true
+                command: bash
+        base:
+                image: sparkie/base
+                network_mode: host
+                stdin_open: true # docker run -i
+                tty: true        # docker run -t
+                restart: always
+                volumes:
+                        - ./sparkie_base:/sparkie_base:z
+                privileged: true
+                command: ros2 launch sparkie_description desc.launch.py
+        realsense:
+                # ./build.sh --name=sparkie/realsense ros:humble-ros-core realsense
+                image: ros_realsense:r35.3.1
+                runtime: nvidia
+                network_mode: host
+                stdin_open: true # docker run -i
+                tty: true        # docker run -t
+                #restart: always
+                volumes:
+                        - ./sparkie_perception:/sparkie_perception:z
+                        - /dev:/dev
+                device_cgroup_rules:
+                        - 'c 81:* rmw'
+                        - 'c 189:* rmw'
+                privileged: true
+                command: bash
