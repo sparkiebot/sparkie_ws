@@ -1,0 +1,3 @@
+[submodule "src/sparkie_board_connect/protos"]
+	path = src/sparkie_board_connect/protos
+	url = https://github.com/sparkiebot/protos.git
