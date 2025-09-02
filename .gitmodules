@@ -1,3 +1,12 @@
 [submodule "src/sparkie_board_connect/protos"]
 	path = src/sparkie_board_connect/protos
 	url = https://github.com/sparkiebot/protos.git
+[submodule "src/sllidar_ros2"]
+	path = src/sllidar_ros2
+	url = https://github.com/Slamtec/sllidar_ros2.git
+[submodule "src/sparkie_perception"]
+	path = src/sparkie_perception
+	url = https://github.com/sparkiebot/sparkie_perception
+[submodule "src/sparkie_base"]
+	path = src/sparkie_base
+	url = https://github.com/sparkiebot/sparkie_base.git
