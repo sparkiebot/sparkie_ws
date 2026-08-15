@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+echo "Stopping Sparkie ROS 2 stack gracefully..."
+
+/usr/local/bin/distrobox enter \
+    -n ros-jazzy \
+    --no-tty \
+    -- \
+    bash -lc '
+        source /opt/ros/jazzy/setup.bash
+        source /home/sparkie/sparkie/sparkie_ws/install/setup.bash
+
+        pkill -SIGINT -f "ros2 launch sparkie_base sparkie.launch.py" || true
+    '
