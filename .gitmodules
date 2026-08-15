@@ -10,3 +10,6 @@
 [submodule "src/sparkie_base"]
 	path = src/sparkie_base
 	url = https://github.com/sparkiebot/sparkie_base.git
+[submodule "src/sparkie_conversation"]
+	path = src/sparkie_conversation
+	url = https://github.com/sparkiebot/sparkie_conversation.git

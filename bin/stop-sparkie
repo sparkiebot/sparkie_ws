@@ -6,7 +6,7 @@ echo "Stopping Sparkie ROS 2 stack gracefully..."
     -n ros-jazzy \
     --no-tty \
     -- \
-    bash -lc '
+    bash -c '
         source /opt/ros/jazzy/setup.bash
         source /home/sparkie/sparkie/sparkie_ws/install/setup.bash
 

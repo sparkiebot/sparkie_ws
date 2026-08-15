@@ -1,0 +1,22 @@
+[Unit]
+Description=Sparkie ROS 2 Robot
+Requires=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=sparkie
+WorkingDirectory=/home/sparkie/sparkie
+Environment=HOME=/home/sparkie
+
+ExecStart=/home/sparkie/sparkie/sparkie_ws/bin/start-sparkie
+ExecStop=/home/sparkie/sparkie/sparkie_ws/bin/stop-sparkie
+
+TimeoutStopSec=20
+
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

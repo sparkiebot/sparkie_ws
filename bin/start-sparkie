@@ -2,7 +2,7 @@
 
 set -e
 
-# Aspetta che la board USB sia comparsa
+# Waiting for the serial port to be available
 while [ ! -e /dev/ttyACM0 ]; do
     echo "Waiting for /dev/ttyACM0..."
     sleep 1
@@ -14,12 +14,11 @@ echo "Starting Sparkie ROS 2 stack..."
     -n ros-jazzy \
     --no-tty \
     -- \
-    bash -lc '
+    bash -c '
         set -e
 
         source /opt/ros/jazzy/setup.bash
         source /home/sparkie/sparkie/sparkie_ws/install/setup.bash
-
         exec ros2 launch sparkie_base sparkie.launch.py \
             serial_port:=/dev/ttyACM0 \
             use_perception:=True
